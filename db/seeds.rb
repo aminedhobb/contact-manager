@@ -12,9 +12,10 @@ puts "creating contacts..."
 100.times do
   Contact.create!(
     name: Faker::DragonBall.character,
-    address: Faker::Address.street_name,
+    address: Faker::Address.street_address,
     email: Faker::Internet.email,
-    phone: Faker::PhoneNumber.cell_phone
+    phone: Faker::PhoneNumber.cell_phone,
+    tag_list: [Faker::ProgrammingLanguage.name, Faker::ProgrammingLanguage.name]
     )
 end
 
