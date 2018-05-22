@@ -1,0 +1,9 @@
+<%= simple_form_for @contact do |f| %>
+<%= f.input :name %>
+<%= f.input :phone %>
+<%= f.input :address %>
+<%= f.input :email %>
+<!-- <%= f.label :tag_list, 'Tags (separated by commas)' %><br/> -->
+<%= f.input :tag_list, label: 'Tags (separated by commas)' %>
+<%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

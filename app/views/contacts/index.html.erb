@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+    <h3 class="text-center">
+      Contacts
+      <%= link_to new_contact_path do %>
+           +
+      <% end %>
+    </h3>
+    <% @contacts.each do |contact| %>
+    <div class="list-contact">
+      <%= link_to contact_path(contact) do %>
+      <h6><%= contact.name %></h6>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+  </div>
+</div>
+
+

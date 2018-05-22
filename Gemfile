@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.4.3'
 
+# gem 'acts-as-taggable-on', '~> 3.4'
+gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 
+gem 'faker'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
