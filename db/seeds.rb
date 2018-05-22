@@ -9,7 +9,7 @@
 Contact.destroy_all
 
 puts "creating contacts..."
-20.times do
+100.times do
   Contact.create!(
     name: Faker::DragonBall.character,
     address: Faker::Address.street_name,

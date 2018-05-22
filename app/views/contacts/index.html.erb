@@ -1,20 +1,41 @@
-<div class="container">
+<div class="container" style="margin-bottom: 20px;">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
     <h3 class="text-center">
       Contacts
-      <%= link_to new_contact_path do %>
-           +
-      <% end %>
     </h3>
     <% @contacts.each do |contact| %>
     <div class="list-contact">
-      <%= link_to contact_path(contact) do %>
-      <h6><%= contact.name %></h6>
-      <% end %>
+      <div>
+        <%= link_to contact_path(contact) do %>
+        <h6><%= contact.name %></h6>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to contact_path(contact),
+        method: :delete,
+        data: { confirm: "Are you sure you want to delete this contact?" } do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %>
+        <%= link_to edit_contact_path(contact) do %>
+        <i class="fas fa-pencil-alt"></i>
+        <% end %>
+      </div>
     </div>
     <% end %>
-  </div>
+    <%= form_tag contacts_path, class: 'form-inline', method: :get do %>
+    <div class="text-center">
+      <%= select_tag "contacts_per_page", options_for_select([ 10, 20,50 ], @contacts_per_page)  %>
+    </div>
+    <div class="text-center">
+      <%= hidden_field_tag("page", value = @page) %></br>
+      <%= submit_tag("Newest", class: "btn btn-primary") %>
+      <% if @page > 0 %>
+        <%= submit_tag("Previous", class: "btn btn-primary") %>
+      <% end %>
+      <%= submit_tag("Next", class: "btn btn-primary") %>
+    </div>
+    <% end %>
   </div>
 </div>
 
