@@ -32,7 +32,7 @@
         <%= submit_tag("Previous", class: "btn btn-primary") %>
       <% end %>
       <% unless (@page + 1 ) * @contacts_per_page >= Contact.count %>
-      <%= submit_tag("Next", class: "btn btn-primary") %>
+        <%= submit_tag("Next", class: "btn btn-primary") %>
       <% end %>
     </div>
     <% end %>
